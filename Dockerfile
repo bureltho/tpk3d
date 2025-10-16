@@ -1,7 +1,7 @@
 FROM node:20 AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install            # installe devDependencies
+RUN npm install --include=dev
 COPY . .
 RUN npm run build
 
